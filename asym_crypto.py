@@ -46,7 +46,6 @@ def get_private_key(password=None):
 	if password:
 		if not isinstance(password,bytes):
 			password = password.encode('utf-8')
-		key_encryption_algorithm = serialization.BestAvailableEncryption(password)
 	
 	try:
 		with open(f'{key_name}_private.pem', 'rb') as key_file:
