@@ -1,11 +1,30 @@
+# -*- coding: utf-8 -*-
+"""
+This module is a pair key (private and public) generator that will create the key pair and save them to a file.
+
+__External modules__: `cryptography`
+
+`Compatible with Python3.7 or higher`\n
+
+_Repository:_ https://github.com/rickfernandes/asymmetric_crypto
+"""
 from cryptography.hazmat.backends import default_backend
 from cryptography.hazmat.primitives.asymmetric import rsa
 from cryptography.hazmat.primitives import serialization
 
 
 def gen_key_pair(password=None):
-	"""Generate a RSA private and a public key (.pem format) using password to encrypt them
-	The private key has size 4096"""
+	"""Function to generate a RSA private and a public key (.pem format) using password to encrypt them
+	The private key has size 4096
+
+	Args:
+		password (bytes): password to be used when encrypting the key
+		or
+		password (str): password to be used when encrypting the key
+
+	Returns:
+		`private_pem, public_pem` (bytes): return the key pair as bytes.
+    """
 	private_key = rsa.generate_private_key(
 		public_exponent=65537,
 		key_size=4096,
@@ -34,7 +53,15 @@ def gen_key_pair(password=None):
 	return private_pem, public_pem
 
 def write_to_file(key_name,keys):
-	"""Write private and public keys to pem files, using `key_name` as the pem filename"""
+	"""Function to write private and public keys to pem files, using `key_name` as the pem filename
+
+	Args:
+		key_name (str): filename to be used.
+
+	Returns:
+		__None__
+    """
+
 	pvt_name = f'{key_name}_private.pem'
 	with open(pvt_name, 'wb') as pvt:
 		pvt.write(keys[0])
@@ -52,7 +79,14 @@ if __name__ == '__main__':
 
 
 def get_pwd_key():
-	"""Gets password from `pwd` filename and `key_name` from key_name file"""
+	"""Function to get the password from `pwd` filename and `key_name` from key_name file.
+
+	Args:
+		__None__
+
+	Returns:
+		`key_name`, `password` (str): files contents
+    """
 	with open('pwd') as pwd: password = pwd.read()
 	with open('key_name') as key: key_name = key.read()
 	return key_name, password
