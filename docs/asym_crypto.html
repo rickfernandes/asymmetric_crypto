@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
 <meta name="generator" content="pdoc 0.9.1" />
-<title>auth API documentation</title>
+<title>asym_crypto API documentation</title>
 <meta name="description" content="This module uses a private and/or public key to encypt/decrypt payloads …" />
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/sanitize.min.css" integrity="sha256-PK9q560IAAa6WVRRh76LtCaI8pjTJ2z11v0miyNNjrs=" crossorigin>
 <link rel="preload stylesheet" as="style" href="https://cdnjs.cloudflare.com/ajax/libs/10up-sanitize.css/11.0.1/typography.min.css" integrity="sha256-7l/o7C8jubJiy74VsKTidCy1yBkRtiUGbVkYBylBqUg=" crossorigin>
@@ -19,7 +19,7 @@
 <main>
 <article id="content">
 <header>
-<h1 class="title">Module <code>auth</code></h1>
+<h1 class="title">Module <code>asym_crypto</code></h1>
 </header>
 <section id="section-intro">
 <p>This module uses a private and/or public key to encypt/decrypt payloads.</p>
@@ -277,12 +277,12 @@ if __name__ == &#39;__main__&#39;:
 <section>
 <h2 class="section-title" id="header-functions">Functions</h2>
 <dl>
-<dt id="auth.decrypt_payload"><code class="name flex">
+<dt id="asym_crypto.decrypt_payload"><code class="name flex">
 <span>def <span class="ident">decrypt_payload</span></span>(<span>encrypted_payload, **kgars)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Fuction decrypt the <code>pencrypted_ayload</code> using a <code>private_key</code>.
-If no private key is passed with the arguments, uses <code><a title="auth.get_private_key" href="#auth.get_private_key">get_private_key()</a></code> method to load it.</p>
+If no private key is passed with the arguments, uses <code><a title="asym_crypto.get_private_key" href="#asym_crypto.get_private_key">get_private_key()</a></code> method to load it.</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>encrypted_payload</code></strong> :&ensp;<code>bytes</code></dt>
@@ -326,12 +326,12 @@ If no private key is passed with the arguments, uses <code><a title="auth.get_pr
         return decrypted</code></pre>
 </details>
 </dd>
-<dt id="auth.encrypt_payload"><code class="name flex">
+<dt id="asym_crypto.encrypt_payload"><code class="name flex">
 <span>def <span class="ident">encrypt_payload</span></span>(<span>payload, **kgars)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Fuction encrypt the <code>payload</code> using a <code>public_key</code>.
-If no public key is passed with the arguments, uses <code><a title="auth.get_public_key" href="#auth.get_public_key">get_public_key()</a></code> method to load it.</p>
+If no public key is passed with the arguments, uses <code><a title="asym_crypto.get_public_key" href="#asym_crypto.get_public_key">get_public_key()</a></code> method to load it.</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>payload</code></strong> :&ensp;<code>str</code></dt>
@@ -375,7 +375,7 @@ If no public key is passed with the arguments, uses <code><a title="auth.get_pub
         return encrypted</code></pre>
 </details>
 </dd>
-<dt id="auth.get_key_name"><code class="name flex">
+<dt id="asym_crypto.get_key_name"><code class="name flex">
 <span>def <span class="ident">get_key_name</span></span>(<span>filename='key_name')</span>
 </code></dt>
 <dd>
@@ -405,7 +405,7 @@ If no public key is passed with the arguments, uses <code><a title="auth.get_pub
         return key_name</code></pre>
 </details>
 </dd>
-<dt id="auth.get_private_key"><code class="name flex">
+<dt id="asym_crypto.get_private_key"><code class="name flex">
 <span>def <span class="ident">get_private_key</span></span>(<span>password=None)</span>
 </code></dt>
 <dd>
@@ -461,7 +461,7 @@ The filename pattern to be used is key_name_private.pem</p>
         return private_key</code></pre>
 </details>
 </dd>
-<dt id="auth.get_public_key"><code class="name flex">
+<dt id="asym_crypto.get_public_key"><code class="name flex">
 <span>def <span class="ident">get_public_key</span></span>(<span>)</span>
 </code></dt>
 <dd>
@@ -502,12 +502,12 @@ The filename pattern to be used is key_name_public.pem</p>
         return public_key</code></pre>
 </details>
 </dd>
-<dt id="auth.sign"><code class="name flex">
+<dt id="asym_crypto.sign"><code class="name flex">
 <span>def <span class="ident">sign</span></span>(<span>payload, **kgars)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Fuction create a encrypted signature for the <code>payload</code> using a <code>private_key</code>.
-If no private key is passed with the arguments, uses <code><a title="auth.get_private_key" href="#auth.get_private_key">get_private_key()</a></code> method to load it.</p>
+If no private key is passed with the arguments, uses <code><a title="asym_crypto.get_private_key" href="#asym_crypto.get_private_key">get_private_key()</a></code> method to load it.</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>payload</code></strong> :&ensp;<code>str</code></dt>
@@ -562,12 +562,12 @@ None (None): if else</p></div>
         return signature</code></pre>
 </details>
 </dd>
-<dt id="auth.verify"><code class="name flex">
+<dt id="asym_crypto.verify"><code class="name flex">
 <span>def <span class="ident">verify</span></span>(<span>signature, payload, **kgars)</span>
 </code></dt>
 <dd>
 <div class="desc"><p>Fuction to verify the <code>payload</code> signature using a <code>public_key</code>.
-If no public key is passed with the arguments, uses <code><a title="auth.get_public_key" href="#auth.get_public_key">get_public_key()</a></code> method to load it.</p>
+If no public key is passed with the arguments, uses <code><a title="asym_crypto.get_public_key" href="#asym_crypto.get_public_key">get_public_key()</a></code> method to load it.</p>
 <h2 id="args">Args</h2>
 <dl>
 <dt><strong><code>signature</code></strong> :&ensp;<code>bytes</code></dt>
@@ -639,13 +639,13 @@ True (boolean): if else</p></div>
 <ul id="index">
 <li><h3><a href="#header-functions">Functions</a></h3>
 <ul class="two-column">
-<li><code><a title="auth.decrypt_payload" href="#auth.decrypt_payload">decrypt_payload</a></code></li>
-<li><code><a title="auth.encrypt_payload" href="#auth.encrypt_payload">encrypt_payload</a></code></li>
-<li><code><a title="auth.get_key_name" href="#auth.get_key_name">get_key_name</a></code></li>
-<li><code><a title="auth.get_private_key" href="#auth.get_private_key">get_private_key</a></code></li>
-<li><code><a title="auth.get_public_key" href="#auth.get_public_key">get_public_key</a></code></li>
-<li><code><a title="auth.sign" href="#auth.sign">sign</a></code></li>
-<li><code><a title="auth.verify" href="#auth.verify">verify</a></code></li>
+<li><code><a title="asym_crypto.decrypt_payload" href="#asym_crypto.decrypt_payload">decrypt_payload</a></code></li>
+<li><code><a title="asym_crypto.encrypt_payload" href="#asym_crypto.encrypt_payload">encrypt_payload</a></code></li>
+<li><code><a title="asym_crypto.get_key_name" href="#asym_crypto.get_key_name">get_key_name</a></code></li>
+<li><code><a title="asym_crypto.get_private_key" href="#asym_crypto.get_private_key">get_private_key</a></code></li>
+<li><code><a title="asym_crypto.get_public_key" href="#asym_crypto.get_public_key">get_public_key</a></code></li>
+<li><code><a title="asym_crypto.sign" href="#asym_crypto.sign">sign</a></code></li>
+<li><code><a title="asym_crypto.verify" href="#asym_crypto.verify">verify</a></code></li>
 </ul>
 </li>
 </ul>
