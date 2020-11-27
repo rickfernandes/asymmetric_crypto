@@ -6,4 +6,4 @@ According to [Wikipedia](https://en.wikipedia.org/wiki/Public-key_cryptography):
 
 **Documentation**
 - Key pair generator : = [key_pair_generator](https://rickfernandes.github.io/asymmetric_crypto/docs/key_pair_generator.html)
-- Asymmetric Cryptography functions : = [asym_cryto](https://rickfernandes.github.io/asymmetric_crypto/docs/asym_cryto.html)
+- Asymmetric Cryptography functions : = [asym_crypto](https://rickfernandes.github.io/asymmetric_crypto/docs/asym_crypto.html)
